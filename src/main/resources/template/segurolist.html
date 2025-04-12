@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta chart="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <title>Lista de autos</title>
+</head>
+<body>
+<main>
+    <div class="container px-4 py-5">
+        <h1 class="pb-2 border-bottom">Lista de seguros</h1>
+        <div class="d-flex mt-3 mb-4">
+            <a class="btn btn-primary" th:href="@{'/seguro/new'}">Nuevo seguro</a>
+            <a class="btn btn-condary ms-auto" th:href="@{'/'}">Regresar</a>
+        </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>distrito</th>
+                <th>direccion</th>
+
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="seguro, info : ${listaSeguros}">
+                <td th:text="${info.index + 1}"></td>
+                <td th:text="${seguro.empresa_aseguradora}"></td>
+                <td th:text="${seguro.cobertura_maxima}"></td>
+                <td th:text="${seguro.tarifa}"></td>
+
+                <td><a class="btn btn-primary"
+                       th:href="@{'/seguro/edit?id=' + ${seguro.id}}">Editar</a>
+                </td>
+                <td><a class="btn btn-danger"
+                       th:href="@{'/seguro/delete?id=' + ${seguro.id}}">Borrar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

@@ -28,6 +28,14 @@
             </div>
 
             <div class="mb-3">
+                <label for="category" class="form-label">Categoría</label>
+                <select class="form-select" name="sede" id="sede">
+                    <option th:each="sede: ${listaSedes}"
+                            th:text="${sede.distrito}" th:value="${sede.distrito}">Open this select menu</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
                 <label for="costo_por_dia" class="form-label">costo_por_dia</label>
                 <input type="text" class="form-control" name="costo_por_dia" id="costo_por_dia">
             </div>

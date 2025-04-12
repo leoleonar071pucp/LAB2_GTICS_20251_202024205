@@ -27,6 +27,12 @@ public class SeguroController {
         return "segurolist";
     }
 
+    @GetMapping("/new")
+    public String nuevoSeguroFrm() {
+
+        return "seguronewFrm";
+    }
+
 
 }
 

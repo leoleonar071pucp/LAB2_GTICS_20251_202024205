@@ -27,6 +27,12 @@ public class SedeController {
         return "sedelist";
     }
 
+    @GetMapping("/new")
+    public String nuevoSedeFrm() {
+
+        return "sedenewFrm";
+    }
+
 
 }
 
